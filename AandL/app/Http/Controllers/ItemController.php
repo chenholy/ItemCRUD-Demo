@@ -12,7 +12,7 @@ class ItemController extends Controller
     //
     public function addItem(Request $request){
       $item = new Item;
-      $item -> name = $request-> Input ('itemname');
+      $item -> name = $request-> Input ('name');
       $item -> price = $request-> Input('price');
       $item ->save();
       $response = array('response' => 'Item Added!','success'=>true);
@@ -25,5 +25,10 @@ class ItemController extends Controller
       return response()->json($items);
 
 
+    }
+
+    public function getItem($id){
+      $item =  Item::find($id);
+      return response()->json($item);
     }
 }

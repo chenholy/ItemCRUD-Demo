@@ -19,10 +19,8 @@ export class AddComponent implements OnInit {
   constructor(private router:Router,
     private itemService: ItemService,
     private messageService: MessageService
-  ) {
+  ) { }
 
-
-   }
 
   ngOnInit() {
   }

@@ -28,8 +28,8 @@ export class HomeComponent implements OnInit {
   getAllItems(){
     this.itemService
      .showAllItems()
-     .subscribe(something =>{
-        this.items = something;
+     .subscribe(item =>{
+        this.items = item;
       })
 
   }

@@ -32,4 +32,10 @@ export class ItemService {
      .map(res => res.json());
    }
 
+   showItem(id){
+     return this.http.get(this.server + 'select_item/' + id)
+     .map(res => res.json());
+
+   }
+
 }
