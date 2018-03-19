@@ -32,7 +32,7 @@ export class AddComponent implements OnInit {
     this.itemService.
     addItem(this.model).
     subscribe(response =>{
-      console.log(response);
+      
       this.messageService.showMessage("div#popmsg","alert-info","New Item has been successfully added.","glyphicon-ok");
 
     })

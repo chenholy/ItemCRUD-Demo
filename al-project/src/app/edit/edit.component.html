@@ -3,6 +3,7 @@
     <div class = "panel panel-primary panel-input">
       <div class = "panel-heading">Edit Item</div>
       <div class = "panel-body">
+        <div class="alert alert-success alert-dismissible" id="editmsg" style="display:none"></div>
 
 
         <form class="form-horizontal" #editItemForm = "ngForm" (submit) = "updateItem()">
@@ -47,7 +48,7 @@
                   <div class = "col-sm-offset-4 col-sm-8">
                     <button id="save-btn" type="submit" class="btn btn-success"
                     [disabled] = "!editItemForm.form.valid"
-                    >SAVE</button>
+                    >UPDATE</button>
                     <a class="btn btn-info" (click) = "goBack()">CANCEL</a>
 
                   </div>

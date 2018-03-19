@@ -18,9 +18,9 @@ export class ItemService {
     this.options = new RequestOptions({ headers: this.headers });
    }
 
-   addItem(info){
+   addItem(input){
 
-     var data = JSON.stringify(info);
+     var data = JSON.stringify(input);
 
      return this.http.post(this.server + 'addItem',data,this.options).map(
        res => res.json()
@@ -35,6 +35,14 @@ export class ItemService {
    showItem(id){
      return this.http.get(this.server + 'select_item/' + id)
      .map(res => res.json());
+
+   }
+
+   updateItem(input){
+     var data = JSON.stringify(input);
+     return this.http.post(this.server + 'edit_item',data,this.options).map(
+      res => res.json()
+    );
 
    }
 

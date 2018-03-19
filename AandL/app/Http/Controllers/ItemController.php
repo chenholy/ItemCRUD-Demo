@@ -31,4 +31,15 @@ class ItemController extends Controller
       $item =  Item::find($id);
       return response()->json($item);
     }
+
+    public function updateItem(Request $request){
+      $id = $request->Input('id');
+      $item = Item::find($id);
+      $item -> name = $request-> Input ('name');
+      $item -> price = $request-> Input('price');
+      $item ->save();
+      $response = array('response' => 'Item Updated!','success'=>true);
+      return $response;
+
+    }
 }

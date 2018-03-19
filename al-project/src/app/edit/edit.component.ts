@@ -34,7 +34,7 @@ getOneItem(){
 
   this.itemService.showItem(id).subscribe(
     input => {
-    
+
     this.item = input;
     this.item.id = id;
 
@@ -44,6 +44,15 @@ getOneItem(){
 
   goBack(){
     this.router.navigate(['/home']);
+  }
+
+  updateItem(){
+    this.itemService
+    .updateItem(this.item)
+    .subscribe(response=>{
+      console.log(response);
+      this.messageService.showMessage("div#editmsg","alert-info","Profile has been UPDATED","glyphicon-ok");
+    })
   }
 
 }
