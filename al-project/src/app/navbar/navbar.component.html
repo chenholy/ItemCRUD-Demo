@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <a class="navbar-brand">Angular+Laravel Demo</a>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav nav-pills pull-right">
+        <li id="menuHome" class="active"><a (click) = "setActive('menuHome')" [routerLink]="['/home']">Home</a></li>
+        <li id="menuAdd"><a (click) = "setActive('menuAdd')" [routerLink]="['/add']">Add</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
