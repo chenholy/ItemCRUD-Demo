@@ -46,7 +46,7 @@ export class AddComponent implements OnInit {
   CustomStyle = {
 
     clearButton:{
-      "display":"none"
+      // "display":"none"
     },
 
     layout: {
@@ -58,13 +58,15 @@ export class AddComponent implements OnInit {
   };
 
   imageUploaded(file : any){
-    $('img').hide();
+    // $('img').hide();
 
     this.model.image = file.src;
+    this.file_src = file.src;
+
   }
 
   imageRemoved(file : any){
-    $('img').show();
+    this.file_src = '../assets/upload-avatar.png'
 
   }
 

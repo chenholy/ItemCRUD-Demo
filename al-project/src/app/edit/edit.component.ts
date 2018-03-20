@@ -58,7 +58,7 @@ getOneItem(){
   CustomStyle = {
 
     clearButton:{
-      "display":"none"
+      // "display":"none"
     },
 
     layout: {
@@ -70,13 +70,15 @@ getOneItem(){
   };
 
   imageUploaded(file : any){
-    $('img').hide();
+    // $('img').hide();
 
     this.item.image = file.src;
+    this.file_src = file.src;
   }
 
   imageRemoved(file : any){
-    $('img').show();
+    // $('img').show();
+    this.file_src = "../assets/upload-avatar.png";
 
   }
 
