@@ -2,5 +2,5 @@ export class Item{
   id:number;
   name: string;
   price: number;
-  // photo: string;
+  image: string;
 }

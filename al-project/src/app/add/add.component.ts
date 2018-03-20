@@ -32,7 +32,7 @@ export class AddComponent implements OnInit {
     this.itemService.
     addItem(this.model).
     subscribe(response =>{
-      
+
       this.messageService.showMessage("div#popmsg","alert-info","New Item has been successfully added.","glyphicon-ok");
 
     })
@@ -41,4 +41,34 @@ export class AddComponent implements OnInit {
   goBack(){
     this.router.navigate(['/home']);
   }
+
+
+  CustomStyle = {
+
+    clearButton:{
+      "display":"none"
+    },
+
+    layout: {
+      "width":"200px",
+
+    },
+
+
+  };
+
+  imageUploaded(file : any){
+    $('img').hide();
+
+    this.model.image = file.src;
+  }
+
+  imageRemoved(file : any){
+    $('img').show();
+
+  }
+
+
+
+
 }

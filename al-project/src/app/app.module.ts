@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
+import { ImageUploadModule } from 'angular2-image-upload';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -26,7 +28,8 @@ import { MessageService } from './services/message.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ImageUploadModule.forRoot()
   ],
   providers: [ItemService,MessageService],
   bootstrap: [AppComponent]

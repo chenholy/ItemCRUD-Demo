@@ -46,4 +46,9 @@ export class ItemService {
 
    }
 
+   deleteItem(id){
+     return this.http.get(this.server+ 'delete_item/' + id)
+     .map(res => res.json());
+   }
+
 }

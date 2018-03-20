@@ -20,3 +20,4 @@ Route::post('/addItem','ItemController@addItem');
 Route::get('/items','ItemController@showItems');
 Route::get ('/select_item/{id}','ItemController@getItem');
 Route::post('/edit_item','ItemController@updateItem');
+Route::get('/delete_item/{id}','ItemController@deleteItem');

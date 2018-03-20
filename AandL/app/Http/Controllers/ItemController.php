@@ -14,6 +14,7 @@ class ItemController extends Controller
       $item = new Item;
       $item -> name = $request-> Input ('name');
       $item -> price = $request-> Input('price');
+      $item->image = $request ->Input('image');
       $item ->save();
       $response = array('response' => 'Item Added!','success'=>true);
       return $response;
@@ -37,9 +38,19 @@ class ItemController extends Controller
       $item = Item::find($id);
       $item -> name = $request-> Input ('name');
       $item -> price = $request-> Input('price');
+      $item->image = $request ->Input('image');
+
       $item ->save();
       $response = array('response' => 'Item Updated!','success'=>true);
       return $response;
+
+    }
+
+    public function deleteItem($id){
+      Item::find($id)->delete();
+      $response = array('response' => 'Item Deleted!','success'=>true);
+      return $response;
+
 
     }
 }

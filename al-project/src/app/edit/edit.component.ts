@@ -37,7 +37,7 @@ getOneItem(){
 
     this.item = input;
     this.item.id = id;
-
+    this.file_src = this.item.image;
 
   });
 }
@@ -53,6 +53,31 @@ getOneItem(){
       console.log(response);
       this.messageService.showMessage("div#editmsg","alert-info","Profile has been UPDATED","glyphicon-ok");
     })
+  }
+
+  CustomStyle = {
+
+    clearButton:{
+      "display":"none"
+    },
+
+    layout: {
+      "width":"200px",
+
+    },
+
+
+  };
+
+  imageUploaded(file : any){
+    $('img').hide();
+
+    this.item.image = file.src;
+  }
+
+  imageRemoved(file : any){
+    $('img').show();
+
   }
 
 }

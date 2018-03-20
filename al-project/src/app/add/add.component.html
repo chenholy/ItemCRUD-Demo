@@ -6,8 +6,19 @@
         <div class="alert alert-success alert-dismissible" id="popmsg" style="display:none"></div>
 
         <form class="form-horizontal" #addItemForm = "ngForm" (submit) ="addItem()">
-
           <div class = "col-md-4">
+            <image-upload [style]="CustomStyle"
+            [max] = "1"
+            [buttonCaption] = "'Select Photo'"
+            [dropBoxMessage] = "''"
+            [extensions] = "['jpg','jpeg','gif','png']"
+            (uploadStateChanged) = "disableSendButton($event)"
+            (uploadFinished) = "imageUploaded($event)"
+            (removed) = "imageRemoved($event)"
+            >
+
+
+            </image-upload>
             <img src = "{{ file_src }}" height="200px" width="200px" >
 
           </div>

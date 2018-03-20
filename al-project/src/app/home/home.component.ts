@@ -34,4 +34,21 @@ export class HomeComponent implements OnInit {
 
   }
 
+  deleteItem(id){
+    var response = confirm("Confirm Delete?");
+    if (response == true){
+      this.itemService
+      .deleteItem(id)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.getAllItems();
+          
+        }
+      )
+    }else{
+
+    }
+  }
+
 }

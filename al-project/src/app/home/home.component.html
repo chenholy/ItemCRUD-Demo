@@ -3,13 +3,13 @@
     <div class="panel panel-success" *ngFor = "let item of items">
       <div class="panel-heading">
         <div class = "col-md-8">
-          {{item.name}}
+          <img src= "{{item.image}}" height="50px" width="50px"> {{item.name}}
         </div>
 
 
       <div class="col-md-4">
         <button class="btn btn-primary" routerLink="/edit/{{item.id}}"><span class="glyphicon glyphicon-pencil"></span></button>
-        <button class="btn btn-danger" routerLink=""><span class="glyphicon glyphicon-trash"></span></button>
+        <button class="btn btn-danger" (click)="deleteItem(item.id)"><span class="glyphicon glyphicon-trash"></span></button>
       </div>
 
     </div>
