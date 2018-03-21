@@ -39,6 +39,8 @@ export class AddComponent implements OnInit {
   }
 
   goBack(){
+    $('li').removeClass();
+    $('#menuHome').addClass("active");
     this.router.navigate(['/home']);
   }
 
